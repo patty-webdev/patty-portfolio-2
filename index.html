@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Your Name — Portfolio</title>
+  <title>Patty — Portfolio</title>
   <meta name="description" content="Portfolio of Your Name — Web developer, designer, and creator.">
   <style>
     :root{
@@ -117,6 +117,52 @@
       .sidebar{position:relative;top:0}
     }
 
+    /* Mobile responsive for intro section */
+    @media (max-width:768px){
+      body{padding:20px 16px}
+      .card{padding:20px}
+      .hero{
+        flex-direction:column;
+        gap:16px;
+        text-align:center;
+      }
+      .avatar{
+        width:100px;
+        height:100px;
+        flex:0 0 100px;
+        margin:0 auto;
+      }
+      .intro h1{font-size:22px}
+      .intro p{margin:12px 0 0;font-size:15px;line-height:1.6}
+      .cta{
+        margin-top:20px;
+        display:flex;
+        flex-direction:column;
+        gap:12px;
+        align-items:center;
+      }
+      .btn, .subtle{
+        margin:0;
+        width:100%;
+        max-width:200px;
+        text-align:center;
+        display:block;
+      }
+    }
+
+    /* Small mobile devices */
+    @media (max-width:480px){
+      body{padding:16px 12px}
+      .card{padding:16px}
+      .hero{gap:12px}
+      .avatar{width:80px;height:80px;flex:0 0 80px}
+      .intro h1{font-size:20px}
+      .intro p{font-size:14px}
+      .logo{width:40px;height:40px}
+      .brand div:first-child{font-size:14px}
+      .brand div:last-child{font-size:11px}
+    }
+
     /* Entrance animations */
     @keyframes fadeInUp {
       from {
@@ -150,7 +196,7 @@
         <div class="logo">YN</div>
         <div>
           <div style="font-weight:800">Patrick</div>
-          <div style="font-size:13px;color:var(--muted);margin-top:4px">Web developer • Designer • Creator</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:4px">Web developer • Graphic Designer • Creator</div>
         </div>
       </div>
       <nav>
@@ -201,6 +247,7 @@
                 <h4>Province of St Louise de Marillac Asia Website</h4>
                 <p>Official website for the Province of St Louise de Marillac Asia featuring mission information, community outreach programs, educational initiatives, and spiritual resources for the Vincentian family.</p>
               </article>
+
 
             </div>
           </div>
