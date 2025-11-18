@@ -1,0 +1,231 @@
+<!-- Static Portfolio - Single-file HTML + CSS
+     Rename this file to index.html and open in your browser.
+     Replace placeholder text, images and links with your real content.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name — Web developer, designer, and creator.">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent1:linear-gradient(135deg,#7c3aed,#06b6d4);
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max-w:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent 8%),
+                  radial-gradient(800px 400px at 90% 90%, rgba(6,182,212,0.06), transparent 8%),
+                  var(--bg);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:40px 20px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+    }
+    .container{
+      width:100%;
+      max-width:var(--max-w);
+    }
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;\      margin-bottom:28px;
+    }
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{
+      width:48px;height:48px;border-radius:12px;background:var(--accent1);
+      display:grid;place-items:center;font-weight:700;color:white;box-shadow:0 6px 18px rgba(2,6,23,0.6)
+    }
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    nav a:hover{color:#fff}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:28px;
+      align-items:start;
+    }
+
+    /* Main card */
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+    }
+    .hero{
+      display:flex;gap:20px;align-items:center
+    }
+    .avatar{
+      width:120px;height:120px;border-radius:16px;flex:0 0 120px;overflow:hidden;background:var(--glass);display:grid;place-items:center;font-size:28px;color:var(--muted)
+    }
+    .intro h1{margin:0;font-size:26px}
+    .intro p{margin:8px 0 0;color:var(--muted)}
+    .cta{margin-top:16px}
+    .btn{
+      display:inline-block;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:700;background:var(--accent1);color:#021025;
+      box-shadow:0 8px 18px rgba(12,18,38,0.5);
+    }
+    .subtle{
+      display:inline-block;margin-left:12px;padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);font-weight:600
+    }
+
+    /* About */
+    .about{margin-top:22px;color:var(--muted)}
+
+    /* Projects */
+    .projects{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .project{
+      background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);
+    }
+    .project .thumb{height:120px;border-radius:8px;overflow:hidden;background:linear-gradient(135deg,#0f1724,#0b1220);display:grid;place-items:center;color:var(--muted);font-weight:700}
+    .project h4{margin:10px 0 6px;font-size:16px}
+    .project p{margin:0;color:var(--muted);font-size:13px}
+
+    /* Sidebar */
+    .sidebar{position:sticky;top:40px}
+    .card.small{padding:18px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .skill{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:999px;font-weight:700;color:var(--muted);font-size:13px}
+
+    .contact-form{display:flex;flex-direction:column;gap:8px}
+    .contact-form input,.contact-form textarea{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:inherit}
+    .contact-form textarea{min-height:100px;resize:vertical}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:980px){
+      .grid{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:stretch}
+      nav{margin-top:12px}
+      .sidebar{position:relative;top:0}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">YN</div>
+        <div>
+          <div style="font-weight:800">Patrick</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:4px">Web developer • Designer • Creator</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="grid">
+      <section>
+        <div class="card">
+          <div class="hero">
+            <div class="avatar"><img src="pic.jpg" alt="Patrick" style="width:100%;height:100%;object-fit:cover;border-radius:16px;"></div>
+            <div class="intro">
+              <h1>Hi — I'm Patrick</h1>
+              <p>I'm a front-end developer building clean, accessible, and delightful web experiences. I enjoy turning ideas into polished interfaces and fun side projects.</p>
+
+              <div class="cta">
+                <a class="btn" href="#projects">View projects</a>
+                <a class="subtle" href="#contact">Hire me</a>
+              </div>
+            </div>
+          </div>
+
+          <div id="about" class="about">
+            <h3 style="margin:18px 0 8px">About</h3>
+            <p>I'm focused on front-end development using HTML, CSS, and JavaScript. I craft responsive layouts, accessible components, and prefer lightweight, maintainable code. Available for freelance and full-time work.</p>
+          </div>
+
+          <div id="projects">
+            <h3 style="margin:18px 0 10px">Selected Projects</h3>
+            <div class="projects">
+              <article class="project">
+                <div class="thumb">Project 1</div>
+                <h4>Portfolio Website</h4>
+                <p>A minimal and responsive portfolio built with HTML/CSS. Includes an image gallery and contact form.</p>
+              </article>
+
+              <article class="project">
+                <div class="thumb">Project 2</div>
+                <h4>E‑commerce Landing</h4>
+                <p>Landing page concept with product cards, filters, and a lightweight layout for conversions.</p>
+              </article>
+
+              <article class="project">
+                <div class="thumb">Project 3</div>
+                <h4>Interactive UI Kit</h4>
+                <p>Reusable components and utilities for rapid prototyping and consistent UI design.</p>
+              </article>
+
+            </div>
+          </div>
+
+        </div>
+
+        <footer>
+          © <span id="year">2025</span> Patrick • Built with ❤️
+        </footer>
+      </section>
+
+      <aside class="sidebar">
+        <div class="card small">
+          <h4>Contact</h4>
+          <p style="color:var(--muted);margin-top:8px">Email: <strong>cuetopatrick1999@gmail.com</strong><br>Location: Manila, Philippines</p>
+
+          <div style="margin-top:12px">
+            <a class="btn" href="mailto:you@example.com">Email me</a>
+          </div>
+        </div>
+
+        <div class="card small" style="margin-top:12px">
+          <h4>Skills</h4>
+          <div class="skills">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">PHP</span>
+            <span class="skill">Responsive</span>
+          </div>
+        </div>
+
+        <div class="card small" style="margin-top:12px">
+          <h4 id="contact">Say hi</h4>
+          <form class="contact-form" onsubmit="event.preventDefault(); alert('This is a demo form — replace with your backend or mailto link.');">
+            <input type="text" placeholder="Your name" required>
+            <input type="email" placeholder="Your email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button class="btn" type="submit">Send</button>
+          </form>
+        </div>
+
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    // Set year automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
