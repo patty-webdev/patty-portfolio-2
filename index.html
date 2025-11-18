@@ -117,11 +117,35 @@
       .sidebar{position:relative;top:0}
     }
 
+    /* Entrance animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-item {
+      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 0;
+    }
+
+    header { animation-delay: 0.1s; }
+    .card:nth-child(1) { animation-delay: 0.3s; }
+    .sidebar .card:nth-child(1) { animation-delay: 0.5s; }
+    .sidebar .card:nth-child(2) { animation-delay: 0.7s; }
+    .sidebar .card:nth-child(3) { animation-delay: 0.9s; }
+    footer { animation-delay: 1.1s; }
+
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
+    <header class="animate-item">
       <div class="brand">
         <div class="logo">YN</div>
         <div>
@@ -138,7 +162,7 @@
 
     <main class="grid">
       <section>
-        <div class="card">
+        <div class="card animate-item">
           <div class="hero">
             <div class="avatar"><img src="pic.jpg" alt="Patrick" style="width:100%;height:100%;object-fit:cover;border-radius:16px;"></div>
             <div class="intro">
@@ -183,13 +207,13 @@
 
         </div>
 
-        <footer>
+        <footer class="animate-item">
           © <span id="year">2025</span> Patrick • Built with ❤️
         </footer>
       </section>
 
       <aside class="sidebar">
-        <div class="card small">
+        <div class="card small animate-item">
           <h4>Contact</h4>
           <p style="color:var(--muted);margin-top:8px">Email: <strong>cuetopatrick1999@gmail.com</strong><br>Location: Manila, Philippines</p>
 
@@ -198,18 +222,24 @@
           </div>
         </div>
 
-        <div class="card small" style="margin-top:12px">
+        <div class="card small animate-item" style="margin-top:12px">
           <h4>Skills</h4>
           <div class="skills">
             <span class="skill">HTML</span>
             <span class="skill">CSS</span>
             <span class="skill">JavaScript</span>
             <span class="skill">PHP</span>
+            <span class="skill">Laravel</span>
+            <span class="skill">WordPress</span>
+            <span class="skill">GitHub</span>
+            <span class="skill">Photoshop</span>
+            <span class="skill">Premiere</span>
+            <span class="skill">CapCut</span>
             <span class="skill">Responsive</span>
           </div>
         </div>
 
-        <div class="card small" style="margin-top:12px">
+        <div class="card small animate-item" style="margin-top:12px">
           <h4 id="contact">Say hi</h4>
           <form class="contact-form" onsubmit="event.preventDefault(); alert('This is a demo form — replace with your backend or mailto link.');">
             <input type="text" placeholder="Your name" required>
