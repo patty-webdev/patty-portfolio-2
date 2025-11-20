@@ -19,6 +19,233 @@
       --radius:14px;
       --max-w:1100px;
     }
+
+    /* Light mode variables */
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --muted: #64748b;
+      --glass: rgba(0,0,0,0.04);
+    }
+
+    [data-theme="light"] body {
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.08), transparent 8%),
+                  radial-gradient(800px 400px at 90% 90%, rgba(6,182,212,0.04), transparent 8%),
+                  var(--bg);
+      color: #1e293b;
+    }
+
+    /* Light mode text colors */
+    [data-theme="light"] h1,
+    [data-theme="light"] h2,
+    [data-theme="light"] h3,
+    [data-theme="light"] h4 {
+      color: #1e293b !important;
+    }
+
+    [data-theme="light"] nav a {
+      color: #64748b;
+    }
+
+    [data-theme="light"] nav a:hover {
+      color: #1e293b;
+    }
+
+    [data-theme="light"] .brand div:first-child {
+      color: #1e293b;
+    }
+
+    [data-theme="light"] .project h4 {
+      color: #1e293b;
+    }
+
+    [data-theme="light"] .modal-info h3 {
+      color: #1e293b;
+    }
+
+    [data-theme="light"] .card {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    [data-theme="light"] .project {
+      background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01));
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    [data-theme="light"] .skill {
+      background: rgba(0,0,0,0.06);
+      color: #475569;
+    }
+
+    /* Light mode contact section */
+    [data-theme="light"] .copy-email {
+      color: #1e293b !important;
+    }
+
+    [data-theme="light"] .copy-email:hover {
+      color: #7c3aed !important;
+    }
+
+    /* Fix contact section description and all muted text in light mode */
+    [data-theme="light"] .card p,
+    [data-theme="light"] .about p {
+      color: #475569 !important;
+    }
+
+    [data-theme="light"] .loading-screen {
+      background: #f8fafc;
+    }
+
+    [data-theme="light"] .loading-text {
+      color: #64748b;
+    }
+
+    /* Experience Timeline Styles */
+    .timeline {
+      position: relative;
+      max-width: 100%;
+      margin: 20px 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--accent1));
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 60px;
+      opacity: 0;
+      animation: slideInTimeline 0.8s ease-out forwards;
+    }
+
+    .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+    .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+    .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+    .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+    .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+
+    @keyframes slideInTimeline {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -40px;
+      top: 8px;
+      width: 16px;
+      height: 16px;
+      background: var(--accent1);
+      border-radius: 50%;
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 0 3px rgba(124,58,237,0.2);
+    }
+
+    .timeline-content {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-content:hover {
+      border-color: rgba(124,58,237,0.3);
+      transform: translateY(-2px);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .timeline-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+    }
+
+    .timeline-date {
+      font-size: 12px;
+      color: var(--muted);
+      background: rgba(124,58,237,0.1);
+      padding: 4px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(124,58,237,0.2);
+    }
+
+    .timeline-company {
+      font-size: 14px;
+      color: #7c3aed;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .timeline-description {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .timeline-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .timeline-skill {
+      background: rgba(6,182,212,0.1);
+      color: #06b6d4;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      border: 1px solid rgba(6,182,212,0.2);
+    }
+
+    /* Light mode timeline styles */
+    [data-theme="light"] .timeline-content {
+      background: rgba(0,0,0,0.02);
+      border-color: rgba(0,0,0,0.1);
+    }
+
+    [data-theme="light"] .timeline-content:hover {
+      border-color: rgba(124,58,237,0.3);
+    }
+
+    [data-theme="light"] .timeline-title {
+      color: #1e293b;
+    }
+
+    [data-theme="light"] .timeline-description {
+      color: #475569;
+    }
+
+    [data-theme="light"] .timeline-dot {
+      border-color: #f8fafc;
+    }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -90,6 +317,130 @@
       color: #fff;
     }
 
+    /* Loading Screen Styles */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .loading-screen.fade-out {
+      opacity: 0;
+    }
+
+    .loading-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+      background: var(--accent1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 24px;
+      margin-bottom: 20px;
+      animation: logoSpin 2s ease-in-out infinite;
+    }
+
+    @keyframes logoSpin {
+      0% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.1) rotate(180deg); }
+      100% { transform: scale(1) rotate(360deg); }
+    }
+
+    .loading-text {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .loading-bar {
+      width: 200px;
+      height: 3px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .loading-progress {
+      height: 100%;
+      background: var(--accent1);
+      width: 0%;
+      animation: loadingProgress 2s ease-out forwards;
+    }
+
+    @keyframes loadingProgress {
+      to { width: 100%; }
+    }
+
+    /* Dark/Light Mode Toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 50px;
+      height: 26px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 13px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .theme-toggle:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .theme-toggle-inner {
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 3px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+    }
+
+    [data-theme="light"] .theme-toggle-inner {
+      transform: translateX(21px);
+      background: #1e293b;
+    }
+
+    /* Scroll Progress Indicator */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 1000;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .scroll-progress-bar {
+      height: 100%;
+      background: var(--accent1);
+      width: 0%;
+      transition: width 0.1s ease;
+    }
+
     .grid{
       display:grid;
       grid-template-columns: 1fr 360px;
@@ -128,10 +479,127 @@
     .projects{margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
     .project{
       background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.4s ease;
     }
-    .project .thumb{height:120px;border-radius:8px;overflow:hidden;background:linear-gradient(135deg,#0f1724,#0b1220);display:grid;place-items:center;color:var(--muted);font-weight:700}
+    .project:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(2,6,23,0.8);
+      border-color: rgba(124,58,237,0.3);
+    }
+    .project .thumb{height:120px;border-radius:8px;overflow:hidden;background:linear-gradient(135deg,#0f1724,#0b1220);display:grid;place-items:center;color:var(--muted);font-weight:700;position:relative;}
+    .project .thumb img {
+      transition: all 0.4s ease;
+    }
+    .project:hover .thumb img {
+      transform: scale(1.1);
+      filter: brightness(0.7);
+    }
     .project h4{margin:10px 0 6px;font-size:16px}
     .project p{margin:0;color:var(--muted);font-size:13px}
+
+    /* Project Hover Overlay */
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(124,58,237,0.95), rgba(6,182,212,0.95));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .project:hover .project-overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .project-preview-title {
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .project-preview-desc {
+      color: rgba(255,255,255,0.9);
+      font-size: 13px;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    .project-tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .tech-badge {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 10px;
+      font-weight: 600;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .project-preview-links {
+      display: flex;
+      gap: 8px;
+    }
+
+    .preview-link {
+      background: rgba(255,255,255,0.1);
+      color: white;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.3);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .preview-link:hover {
+      background: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+    }
+
+    .preview-link.live {
+      background: rgba(34,197,94,0.3);
+      border-color: rgba(34,197,94,0.5);
+    }
+
+    .preview-link.github {
+      background: rgba(255,255,255,0.2);
+      border-color: rgba(255,255,255,0.4);
+    }
+
+    /* Light mode project styles */
+    [data-theme="light"] .project {
+      background: rgba(0,0,0,0.02);
+      border-color: rgba(0,0,0,0.1);
+    }
+
+    [data-theme="light"] .project:hover {
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      border-color: rgba(124,58,237,0.3);
+    }
 
     /* Sidebar */
     .sidebar{position:sticky;top:40px}
@@ -371,6 +839,27 @@
   </style>
 </head>
 <body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-logo">
+      <img src="images/logo.jpg" alt="P" style="width:100%;height:100%;object-fit:cover;border-radius:16px;">
+    </div>
+    <div class="loading-text">Loading Portfolio...</div>
+    <div class="loading-bar">
+      <div class="loading-progress"></div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+  <!-- Dark/Light Mode Toggle -->
+  <div class="theme-toggle" id="themeToggle">
+    <div class="theme-toggle-inner">🌙</div>
+  </div>
+
   <div class="container">
     <header class="animate-item">
       <div class="brand">
@@ -383,6 +872,7 @@
       <nav>
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
+        <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -410,6 +900,83 @@
             <p style="margin-top:12px">This unique blend of technical programming skills and creative design expertise allows me to deliver complete digital solutions from conception to deployment. Available for freelance and full-time opportunities.</p>
           </div>
 
+          <div id="experience" class="about">
+            <h3 style="margin:18px 0 8px">Experience & Education</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <h4 class="timeline-title">Freelance Web Developer & Designer</h4>
+                    <span class="timeline-date">2022 - Present</span>
+                  </div>
+                  <div class="timeline-company">Independent Contractor</div>
+                  <p class="timeline-description">Providing comprehensive web development and graphic design services to clients across various industries. Specializing in custom websites, WordPress development, and brand identity design.</p>
+                  <div class="timeline-skills">
+                    <span class="timeline-skill">WordPress</span>
+                    <span class="timeline-skill">Laravel</span>
+                    <span class="timeline-skill">PHP</span>
+                    <span class="timeline-skill">JavaScript</span>
+                    <span class="timeline-skill">Photoshop</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <h4 class="timeline-title">Web Administrator</h4>
+                    <span class="timeline-date">2022 - Present</span>
+                  </div>
+                  <div class="timeline-company">Sacred Heart College of Lucena City, Inc.</div>
+                  <p class="timeline-description">Developed and maintained the official college website, implementing modern web standards and ensuring responsive design across all devices. Integrated student portal functionality and content management systems.</p>
+                  <div class="timeline-skills">
+                    <span class="timeline-skill">HTML/CSS</span>
+                    <span class="timeline-skill">JavaScript</span>
+                    <span class="timeline-skill">PHP</span>
+                    <span class="timeline-skill">MySQL</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <h4 class="timeline-title">Bachelor of Science in Computer Science</h4>
+                    <span class="timeline-date">2018 - 2022</span>
+                  </div>
+                  <div class="timeline-company">Sacred Heart College of Lucena City, Inc.</div>
+                  <p class="timeline-description">Completed comprehensive Computer Science program covering programming fundamentals, algorithms, data structures, software engineering, and web development. Graduated with focus on web technologies and software development.</p>
+                  <div class="timeline-skills">
+                    <span class="timeline-skill">Programming</span>
+                    <span class="timeline-skill">Algorithms</span>
+                    <span class="timeline-skill">Data Structures</span>
+                    <span class="timeline-skill">Software Engineering</span>
+                    <span class="timeline-skill">Web Development</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <h4 class="timeline-title">High School and Senior High School Diploma</h4>
+                    <span class="timeline-date">2012 - 2018</span>
+                  </div>
+                  <div class="timeline-company">Elias A. Salvador National High School</div>
+                  <p class="timeline-description">Completed secondary education with focus on science and technology. Developed early interest in computers and digital design.</p>
+                  <div class="timeline-skills">
+                    <span class="timeline-skill">Computer Basics</span>
+                    <span class="timeline-skill">Digital Literacy</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div id="projects">
             <h3 style="margin:18px 0 10px">Selected Projects</h3>
             <div class="projects">
@@ -421,6 +988,21 @@
                   <a href="https://patty-portfolio.infinityfree.me/login_registration.php" class="project-link">View Live</a>
                   <a href="#" class="project-link github">GitHub</a>
                 </div>
+                <div class="project-overlay">
+                  <h4 class="project-preview-title">COOP Loaning Management</h4>
+                  <p class="project-preview-desc">Full-stack loan management system with member registration, payment tracking, loan approval workflows, and comprehensive reporting dashboard.</p>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">PHP</span>
+                    <span class="tech-badge">Laravel</span>
+                    <span class="tech-badge">MySQL</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">Bootstrap</span>
+                  </div>
+                  <div class="project-preview-links">
+                    <a href="https://patty-portfolio.infinityfree.me/login_registration.php" target="_blank" class="preview-link live">🔗 Live Demo</a>
+                    <a href="#" class="preview-link github">📂 Source Code</a>
+                  </div>
+                </div>
               </article>
 
               <article class="project">
@@ -430,6 +1012,21 @@
                 <div class="project-links">
                   <a href="https://shc.edu.ph" class="project-link">View Live</a>
                   <a href="#" class="project-link github">GitHub</a>
+                </div>
+                <div class="project-overlay">
+                  <h4 class="project-preview-title">Sacred Heart College</h4>
+                  <p class="project-preview-desc">Official educational institution website with academic programs, admissions portal, news system, and student information management.</p>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">WordPress</span>
+                    <span class="tech-badge">PHP</span>
+                    <span class="tech-badge">MySQL</span>
+                    <span class="tech-badge">jQuery</span>
+                    <span class="tech-badge">CSS3</span>
+                  </div>
+                  <div class="project-preview-links">
+                    <a href="https://shc.edu.ph" target="_blank" class="preview-link live">🔗 Visit Site</a>
+                    <a href="#" class="preview-link github">📂 View Code</a>
+                  </div>
                 </div>
               </article>
 
@@ -441,6 +1038,21 @@
                   <a href="https://pslm.asia" target="_blank" class="project-link">View Live</a>
                   <a href="#" class="project-link github">GitHub</a>
                 </div>
+                <div class="project-overlay">
+                  <h4 class="project-preview-title">PSLM Asia Province</h4>
+                  <p class="project-preview-desc">Religious organization website with mission information, community programs, spiritual resources, and member directory systems.</p>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">WordPress</span>
+                    <span class="tech-badge">PHP</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">MySQL</span>
+                  </div>
+                  <div class="project-preview-links">
+                    <a href="https://pslm.asia" target="_blank" class="preview-link live">🔗 Live Site</a>
+                    <a href="#" class="preview-link github">📂 Repository</a>
+                  </div>
+                </div>
               </article>
 
               <article class="project">
@@ -450,6 +1062,21 @@
                 <div class="project-links">
                   <a href="#" class="project-link">Coming Soon</a>
                   <a href="#" class="project-link github">GitHub</a>
+                </div>
+                <div class="project-overlay">
+                  <h4 class="project-preview-title">Beachfront Resort</h4>
+                  <p class="project-preview-desc">Tourism website with online booking system, room galleries, amenities showcase, and local attractions guide for resort guests.</p>
+                  <div class="project-tech-stack">
+                    <span class="tech-badge">WordPress</span>
+                    <span class="tech-badge">WooCommerce</span>
+                    <span class="tech-badge">PHP</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">Booking API</span>
+                  </div>
+                  <div class="project-preview-links">
+                    <a href="#" class="preview-link live">🚧 In Development</a>
+                    <a href="#" class="preview-link github">📂 Planning</a>
+                  </div>
                 </div>
               </article>
 
@@ -580,6 +1207,62 @@
   </div>
 
   <script>
+    // Loading Screen - Only show on first visit
+    window.addEventListener('load', function() {
+      const hasVisited = localStorage.getItem('portfolioVisited');
+      const loadingScreen = document.getElementById('loadingScreen');
+      
+      if (hasVisited) {
+        // User has visited before, hide loading screen immediately
+        loadingScreen.style.display = 'none';
+      } else {
+        // First visit, show loading screen then mark as visited
+        setTimeout(() => {
+          loadingScreen.classList.add('fade-out');
+          setTimeout(() => {
+            loadingScreen.style.display = 'none';
+          }, 500);
+          // Mark as visited for future visits
+          localStorage.setItem('portfolioVisited', 'true');
+        }, 2000);
+      }
+    });
+
+    // Dark/Light Mode Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const toggleInner = themeToggle.querySelector('.theme-toggle-inner');
+
+    // Check for saved theme preference or default to dark
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    body.setAttribute('data-theme', currentTheme);
+    updateToggleIcon(currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateToggleIcon(newTheme);
+    });
+
+    function updateToggleIcon(theme) {
+      toggleInner.textContent = theme === 'dark' ? '🌙' : '☀️';
+    }
+
+    // Scroll Progress Indicator
+    const scrollProgressBar = document.getElementById('scrollProgressBar');
+
+    window.addEventListener('scroll', () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.pageYOffset;
+      const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+      
+      scrollProgressBar.style.width = Math.min(scrollPercent, 100) + '%';
+    });
+
     // Set year automatically
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -707,7 +1390,7 @@ Best regards,`;
 
     // Update active nav link on scroll
     window.addEventListener('scroll', function() {
-      const sections = ['projects', 'about', 'contact'];
+      const sections = ['projects', 'about', 'experience', 'contact'];
       const navLinks = document.querySelectorAll('nav a');
       
       let currentSection = '';
