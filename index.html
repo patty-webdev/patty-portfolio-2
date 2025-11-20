@@ -7,8 +7,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Patty — Portfolio</title>
-  <meta name="description" content="Portfolio of Your Name — Web developer, designer, and creator.">
+  <title>Patrick Cueto — Web Developer & Graphic Designer</title>
+  <meta name="description" content="Patrick Cueto - Full-stack web developer and graphic designer from Manila, Philippines. Specializing in WordPress, Laravel, and modern web development with creative design solutions.">
   <style>
     :root{
       --bg:#0f1724;
@@ -54,6 +54,41 @@
     }
     nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
     nav a:hover{color:#fff}
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 16px;
+    }
+
+    .social-link:hover {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .copy-email {
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .copy-email:hover {
+      color: #fff;
+    }
 
     .grid{
       display:grid;
@@ -177,16 +212,16 @@
     }
 
     .animate-item {
-      animation: fadeInUp 0.8s ease-out forwards;
+      animation: fadeInUp 0.5s ease-out forwards;
       opacity: 0;
     }
 
-    header { animation-delay: 0.1s; }
-    .card:nth-child(1) { animation-delay: 0.3s; }
-    .sidebar .card:nth-child(1) { animation-delay: 0.5s; }
-    .sidebar .card:nth-child(2) { animation-delay: 0.7s; }
-    .sidebar .card:nth-child(3) { animation-delay: 0.9s; }
-    footer { animation-delay: 1.1s; }
+    header { animation-delay: 0.05s; }
+    .card:nth-child(1) { animation-delay: 0.15s; }
+    .sidebar .card:nth-child(1) { animation-delay: 0.25s; }
+    .sidebar .card:nth-child(2) { animation-delay: 0.35s; }
+    .sidebar .card:nth-child(3) { animation-delay: 0.45s; }
+    footer { animation-delay: 0.55s; }
 
     /* Modal/Lightbox Styles */
     .modal {
@@ -272,6 +307,67 @@
       transform: scale(1.05);
     }
 
+    /* Project link styles */
+    .project-links {
+      margin-top: 8px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .project-link {
+      display: inline-block;
+      padding: 4px 8px;
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      background: rgba(124,58,237,0.1);
+      color: #7c3aed;
+      border: 1px solid rgba(124,58,237,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .project-link:hover {
+      background: rgba(124,58,237,0.2);
+      transform: translateY(-1px);
+    }
+
+    .project-link.github {
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    .project-link.github:hover {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+
+    /* Smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Section highlight animation */
+    .section-highlight {
+      animation: sectionPulse 1.5s ease-out;
+    }
+
+    @keyframes sectionPulse {
+      0% {
+        box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      }
+      50% {
+        box-shadow: 0 12px 40px rgba(124,58,237,0.3), 0 8px 30px rgba(2,6,23,0.6);
+        transform: translateY(-2px);
+      }
+      100% {
+        box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+        transform: translateY(0);
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -298,7 +394,7 @@
             <div class="avatar"><img src="images/pic.jpg" alt="Patrick" style="width:100%;height:100%;object-fit:cover;border-radius:16px;"></div>
             <div class="intro">
               <h1>Hi — I'm Patrick</h1>
-              <p>I'm a web developer and graphic designer creating exceptional digital experiences. I build responsive websites with clean code while crafting compelling visual designs, from brand identities to promotional materials that tell meaningful stories.</p>
+              <p>Passionate creator at the intersection of code and design. I turn ideas into digital experiences that not only look stunning but perform flawlessly across all devices.</p>
 
               <div class="cta">
                 <a class="btn" href="#projects">View projects</a>
@@ -321,24 +417,40 @@
                 <div class="thumb"><img src="images/coop.jpg" alt="COOP Loaning Management System" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
                 <h4>COOP Loaning Management System</h4>
                 <p>A comprehensive web-based system for managing cooperative loans, member applications, payment tracking, and loan approval workflows with intuitive dashboard and reporting features.</p>
+                <div class="project-links">
+                  <a href="#" class="project-link">View Live</a>
+                  <a href="#" class="project-link github">GitHub</a>
+                </div>
               </article>
 
               <article class="project">
                 <div class="thumb"><img src="images/shc.jpg" alt="Sacred Heart College Website" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
                 <h4>Sacred Heart College Website</h4>
                 <p>Official website for Sacred Heart College of Lucena City, Inc. featuring academic programs, admissions information, campus news, faculty profiles, and student portal integration.</p>
+                <div class="project-links">
+                  <a href="#" class="project-link">View Live</a>
+                  <a href="#" class="project-link github">GitHub</a>
+                </div>
               </article>
 
               <article class="project">
                 <div class="thumb"><img src="images/pslm.asia.png" alt="Province of St Louise de Marillac Asia Website" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
                 <h4>Province of St Louise de Marillac Asia Website</h4>
                 <p>Official website for the Province of St Louise de Marillac Asia featuring mission information, community outreach programs, educational initiatives, and spiritual resources for the Vincentian family.</p>
+                <div class="project-links">
+                  <a href="https://pslm.asia" target="_blank" class="project-link">View Live</a>
+                  <a href="#" class="project-link github">GitHub</a>
+                </div>
               </article>
 
               <article class="project">
                 <div class="thumb"><img src="images/bfr-site.jpg" alt="Beachfront Resort Website Plan" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
                 <h4>Beachfront Resort Website Plan</h4>
                 <p>Planned website design using WordPress for a beachfront resort in Marinduque, Philippines featuring accommodation booking, resort amenities, local attractions, and guest services integration.</p>
+                <div class="project-links">
+                  <a href="#" class="project-link">Coming Soon</a>
+                  <a href="#" class="project-link github">GitHub</a>
+                </div>
               </article>
 
 
@@ -408,11 +520,29 @@
 
       <aside class="sidebar">
         <div class="card small animate-item">
-          <h4>Contact</h4>
-          <p style="color:var(--muted);margin-top:8px">Email: <strong>cuetopatrick1999@gmail.com</strong><br>Location: Manila, Philippines</p>
+          <h4 id="contact">Contact</h4>
+          <p>Ready to bring your ideas to life? Let's collaborate and create something amazing together.</p>
+          
+          <div style="margin-top:12px;">
+            <p style="color:var(--muted);margin:6px 0;font-size:14px">Email: <strong class="copy-email" onclick="copyEmail()" title="Click to copy">cuetopatrick1999@gmail.com</strong></p>
+            <p style="color:var(--muted);margin:6px 0;font-size:14px">Location: Manila, Philippines</p>
+          </div>
 
-          <div style="margin-top:12px">
-            <a class="btn" href="mailto:you@example.com">Email me</a>
+          <div style="margin-top:14px;">
+            <a class="btn" href="#" onclick="sendEmail()" style="display:block;text-align:center;margin-bottom:8px;">Send Email</a>
+            <a class="btn" href="#" style="display:block;text-align:center;background:rgba(255,255,255,0.05);color:var(--muted);" onclick="downloadCV()">Download CV</a>
+          </div>
+          
+          <div style="display:flex;gap:8px;justify-content:center;margin-top:12px;">
+            <a href="https://github.com/patty-webdev" target="_blank" class="social-link" title="GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/patrick-cueto" target="_blank" class="social-link" title="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="mailto:cuetopatrick1999@gmail.com" class="social-link" title="Email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
           </div>
         </div>
 
@@ -431,16 +561,6 @@
             <span class="skill">CapCut</span>
             <span class="skill">Responsive</span>
           </div>
-        </div>
-
-        <div class="card small animate-item" style="margin-top:12px">
-          <h4 id="contact">Say hi</h4>
-          <form class="contact-form" onsubmit="event.preventDefault(); alert('This is a demo form — replace with your backend or mailto link.');">
-            <input type="text" placeholder="Your name" required>
-            <input type="email" placeholder="Your email" required>
-            <textarea placeholder="Message" required></textarea>
-            <button class="btn" type="submit">Send</button>
-          </form>
         </div>
 
       </aside>
@@ -462,6 +582,57 @@
   <script>
     // Set year automatically
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Copy email to clipboard
+    function copyEmail() {
+      const email = 'cuetopatrick1999@gmail.com';
+      navigator.clipboard.writeText(email).then(function() {
+        // Show feedback
+        const emailElement = document.querySelector('.copy-email');
+        const originalText = emailElement.textContent;
+        emailElement.textContent = 'Email copied!';
+        emailElement.style.color = '#7c3aed';
+        
+        setTimeout(() => {
+          emailElement.textContent = originalText;
+          emailElement.style.color = '';
+        }, 2000);
+      }).catch(function() {
+        alert('Email: ' + email);
+      });
+    }
+
+    // Download CV placeholder
+    function downloadCV() {
+      alert('CV download feature - Please add your actual CV file link here');
+    }
+
+    // Send Email function
+    function sendEmail() {
+      const email = 'cuetopatrick1999@gmail.com';
+      const subject = 'Hello Patrick - Portfolio Contact';
+      const body = `Hi Patrick,
+
+I found your portfolio and I'm interested in discussing a potential project/opportunity.
+
+Best regards,`;
+      
+      // Create mailto link with pre-filled subject and body
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Create a temporary anchor element and click it
+      const tempLink = document.createElement('a');
+      tempLink.href = mailtoLink;
+      tempLink.style.display = 'none';
+      document.body.appendChild(tempLink);
+      tempLink.click();
+      document.body.removeChild(tempLink);
+      
+      // Show confirmation message
+      setTimeout(() => {
+        alert('Opening your email client... If it doesn\'t work, please email me at: cuetopatrick1999@gmail.com');
+      }, 100);
+    }
 
     // Modal functionality for graphic design works
     const modal = document.getElementById('imageModal');
@@ -507,6 +678,50 @@
         modal.style.display = 'none';
         document.body.style.overflow = 'auto'; // Restore scrolling
       }
+    });
+
+    // Smooth navigation
+    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          // Smooth scroll to target
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Update active nav link on scroll
+    window.addEventListener('scroll', function() {
+      const sections = ['projects', 'about', 'contact'];
+      const navLinks = document.querySelectorAll('nav a');
+      
+      let currentSection = '';
+      
+      sections.forEach(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            currentSection = section;
+          }
+        }
+      });
+      
+      // Update active nav link styling
+      navLinks.forEach(link => {
+        link.style.color = '';
+        if (link.getAttribute('href') === `#${currentSection}`) {
+          link.style.color = '#fff';
+        }
+      });
     });
   </script>
 </body>
