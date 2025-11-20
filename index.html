@@ -604,7 +604,14 @@
 
     // Download CV placeholder
     function downloadCV() {
-      alert('CV download feature - Please add your actual CV file link here');
+      // Create a link element and trigger download
+      const link = document.createElement('a');
+      link.href = 'assets/PATRICK RESUME WEB DESIGNER.pdf'; // Update this path to your actual PDF file
+      link.download = 'PATRICK RESUME WEB DESIGNER.pdf';
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
 
     // Send Email function
