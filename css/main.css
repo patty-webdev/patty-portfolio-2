@@ -569,6 +569,21 @@ nav a:hover{color:#fff}
   transform: scale(1.1);
   filter: brightness(0.7);
 }
+
+.project-embed-container {
+  height: 200px !important;
+  padding: 8px;
+  background: var(--glass) !important;
+}
+
+.project-embed-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 4px;
+  background: var(--card-bg);
+}
+
 .project h4{margin:10px 0 6px;font-size:16px}
 .project p{margin:0;color:var(--muted);font-size:13px}
 
