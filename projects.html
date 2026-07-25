@@ -28,7 +28,7 @@
     </script>
 </head>
 <body id="top">
-    <header class="header">
+    <header class="header" id="siteHeader">
         <div class="header-content">
             <a href="index.html" class="logo">
                 <div class="logo-image">
@@ -36,10 +36,11 @@
                 </div>
                 <div>
                     <div class="logo-text">Pat Creatives</div>
-                    <div class="logo-subtitle">Web developer • Graphic Designer • Creator</div>
+                    <div class="logo-subtitle">Fullstack Web developer • Graphic Designer • Creator</div>
                 </div>
             </a>
-            <nav class="header-nav">
+            <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+            <nav class="header-nav" id="siteNav">
                 <a href="#web-projects">Projects</a>
                 <a href="#graphic-design">Design</a>
                 <a href="#top">Top</a>
@@ -455,6 +456,24 @@
         function updateToggleIcon(theme) {
             const toggleInner = document.querySelector('.theme-toggle-inner');
             toggleInner.textContent = theme === 'dark' ? '🌙' : '☀️';
+        }
+
+        // Mobile nav toggle
+        const navToggleBtn = document.getElementById('navToggle');
+        const siteHeaderEl = document.getElementById('siteHeader');
+        const siteNavEl = document.getElementById('siteNav');
+        if (navToggleBtn && siteHeaderEl) {
+            navToggleBtn.addEventListener('click', () => {
+                siteHeaderEl.classList.toggle('nav-open');
+                const expanded = navToggleBtn.getAttribute('aria-expanded') === 'true';
+                navToggleBtn.setAttribute('aria-expanded', String(!expanded));
+            });
+            document.addEventListener('click', (e) => {
+                if (!siteHeaderEl.contains(e.target) && siteHeaderEl.classList.contains('nav-open')) {
+                    siteHeaderEl.classList.remove('nav-open');
+                    navToggleBtn.setAttribute('aria-expanded','false');
+                }
+            });
         }
 
         // Load saved theme on page load

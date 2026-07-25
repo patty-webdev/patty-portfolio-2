@@ -289,6 +289,16 @@ body {
     margin-bottom: 4rem;
 }
 
+/* Mobile nav toggle and responsive nav behavior for projects page */
+.nav-toggle { display: none; }
+
+@media (max-width:980px) {
+    .nav-toggle { display: inline-flex; align-items: center; justify-content: center; width:44px; height:38px; background: transparent; border:1px solid var(--border); color:var(--muted); border-radius:8px; cursor:pointer; margin-left:auto; }
+    header .header-nav { display: none; }
+    header.nav-open .header-nav { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+    header.nav-open .header-nav a { display: block; margin-left: 0; padding: 8px 0; color: var(--muted); }
+}
+
 .category-title {
     font-size: 2rem;
     margin: 0 0 1.5rem 0;

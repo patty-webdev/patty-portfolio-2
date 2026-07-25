@@ -63,7 +63,7 @@
   </div>
 
   <div class="container">
-    <header class="animate-item">
+    <header class="animate-item" id="siteHeader">
       <div class="brand">
         <div class="logo"><img loading="lazy" decoding="async" fetchpriority="low" src="images/logo.jpg" alt="Patrick Logo" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
         <div>
@@ -71,7 +71,8 @@
           <div style="font-size:13px;color:var(--muted);margin-top:4px">Fullstack Web developer • Graphic Designer • Creator</div>
         </div>
       </div>
-      <nav>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <nav id="siteNav">
         <a href="#projects">Projects</a>
         <a href="#services">Services</a>
         <a href="#about">About</a>
@@ -676,6 +677,24 @@
 
     function updateToggleIcon(theme) {
       toggleInner.textContent = theme === 'dark' ? '🌙' : '☀️';
+    }
+
+    // Mobile nav toggle
+    const navToggleBtn = document.getElementById('navToggle');
+    const siteHeaderEl = document.getElementById('siteHeader');
+    const siteNavEl = document.getElementById('siteNav');
+    if (navToggleBtn && siteHeaderEl) {
+      navToggleBtn.addEventListener('click', () => {
+        siteHeaderEl.classList.toggle('nav-open');
+        const expanded = navToggleBtn.getAttribute('aria-expanded') === 'true';
+        navToggleBtn.setAttribute('aria-expanded', String(!expanded));
+      });
+      document.addEventListener('click', (e) => {
+        if (!siteHeaderEl.contains(e.target) && siteHeaderEl.classList.contains('nav-open')) {
+          siteHeaderEl.classList.remove('nav-open');
+          navToggleBtn.setAttribute('aria-expanded','false');
+        }
+      });
     }
 
     // Scroll Progress Indicator
