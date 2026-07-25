@@ -7,6 +7,9 @@
     --muted: #9aa4b2;
     --accent1: linear-gradient(135deg, #ef4444, #f97316);
     --glass: rgba(255,255,255,0.04);
+    --toggle-bg: rgba(255,255,255,0.1);
+    --toggle-inner-bg: #ffffff;
+    --toggle-icon-color: #0f1724;
 }
 
 [data-theme="light"] {
@@ -16,6 +19,9 @@
     --text: #1e293b;
     --muted: #64748b;
     --glass: rgba(0,0,0,0.04);
+    --toggle-bg: rgba(30,41,59,0.08);
+    --toggle-inner-bg: #1e293b;
+    --toggle-icon-color: #f8fafc;
 }
 
 * { box-sizing: border-box; }
@@ -31,14 +37,15 @@ body {
 }
 
 .header {
-    background: rgba(15,23,36,0.92);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
     padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
     backdrop-filter: blur(16px);
     box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 .header-content {
@@ -81,28 +88,53 @@ body {
     margin-top: 4px;
 }
 
+.header-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.header-nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.header-nav a:hover,
+.header-nav a:focus {
+    color: var(--text);
+    transform: translateY(-1px);
+}
+
+.header-nav a.active {
+    color: var(--text);
+}
+
 .theme-toggle {
     position: fixed;
     top: 20px;
     right: 20px;
     width: 50px;
     height: 26px;
-    background: rgba(255,255,255,0.1);
+    background: var(--toggle-bg);
     border-radius: 13px;
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 1000;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid var(--border);
 }
 
 .theme-toggle:hover {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.16);
 }
 
 .theme-toggle-inner {
     width: 20px;
     height: 20px;
-    background: #fff;
+    background: var(--toggle-inner-bg);
+    color: var(--toggle-icon-color);
     border-radius: 50%;
     position: absolute;
     top: 2px;
@@ -116,7 +148,6 @@ body {
 
 [data-theme="light"] .theme-toggle-inner {
     transform: translateX(21px);
-    background: #1e293b;
 }
 
 .container {
