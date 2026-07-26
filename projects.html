@@ -16,7 +16,7 @@
     <meta name="twitter:title" content="All Projects — Patrick Portfolio">
     <meta name="twitter:description" content="Explore the complete portfolio of web development and graphic design projects by Patrick Cueto, including WordPress, Laravel, responsive web apps, and branding work.">
     <meta name="twitter:image" content="https://patty-portfolio.infinityfree.me/images/logo.jpg">
-    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/main.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -472,6 +472,11 @@
         function updateToggleIcon(theme) {
             const toggleInner = document.querySelector('.theme-toggle-inner');
             toggleInner.textContent = theme === 'dark' ? '🌙' : '☀️';
+        }
+
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
         }
 
         // Mobile nav toggle
