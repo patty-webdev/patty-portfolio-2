@@ -336,10 +336,12 @@ body{
   align-items:flex-start;
   justify-content:center;
 }
+
 .container{
   width:100%;
   max-width:var(--max-w);
 }
+
 header{
   display:flex;
   align-items:center;
