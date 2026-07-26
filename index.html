@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Patrick Cueto - Full-stack Web Developer & Graphic Designer</title>
+  <script src="function.js" crossorigin="anonymous"></script>
   <meta name="description" content="Patrick Cueto - Full-stack web developer and graphic designer from Manila, Philippines. Specializing in WordPress, Laravel, responsive web design, and SEO-friendly websites.">
   <meta name="keywords" content="Manila web developer, WordPress developer, Laravel developer, graphic designer, SEO-friendly portfolio, responsive web design">
   <meta name="robots" content="index, follow">
@@ -59,19 +60,36 @@
 
   <!-- Dark/Light Mode Toggle -->
   <div class="theme-toggle" id="themeToggle">
-    <div class="theme-toggle-inner">🌙</div>
+        <div class="theme-toggle-inner">🌙</div>
   </div>
 
   <div class="container">
     <header class="animate-item" id="siteHeader">
-      <div class="brand">
-        <div class="logo"><img loading="lazy" decoding="async" fetchpriority="low" src="images/logo.jpg" alt="Patrick Logo" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
-        <div>
-          <div style="font-weight:800">Pat Creatives</div>
-          <div style="font-size:13px;color:var(--muted);margin-top:4px">Fullstack Web developer • Graphic Designer • Creator</div>
+      <div class="navbar-elements">
+        <div class="brand">
+          <div class="logo">
+            <img src="images/logo.jpg" alt="Patrick Logo" loading="lazy" decoding="async">
+          </div>
+          <div class="brand-copy">
+            <div class="brand-name">Pat Creatives</div>
+            <div class="brand-subtitle">
+              Fullstack Web Developer <br>• Graphic Designer • Creator
+            </div>
+          </div>
+        </div>
+        <div class="button-toggle">
+          <button
+            class="nav-toggle"
+            id="navToggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="siteNav"
+            aria-label="Toggle navigation"
+            >
+            ☰
+          </button>
         </div>
       </div>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
       <nav id="siteNav">
         <a href="#projects">Projects</a>
         <a href="#services">Services</a>
@@ -592,6 +610,24 @@
           </div>
         </div>
 
+        <div class="card small animate-item testimonial-card" style="margin-top:12px">
+          <h4>Client Feedback</h4>
+          <p>A few words from clients I've helped build modern, user-friendly websites.</p>
+          <div class="testimonial-slider" id="testimonialSlider">
+            <div class="testimonial-slide active">
+              <p>“Patrick Cueto did an excellent job with SEO optimization and enhancing my website overall. From the start, he was professional, responsive, and easy to communicate with. He took the time to understand my business and made strategic updates that not only improved the look and functionality of the site, but also strengthened its performance from an SEO standpoint. <br><br> I’ve already noticed improvements in how the site is structured and positioned, and everything feels much more polished and intentional. His attention to detail and ability to execute efficiently really stood out.”</p>
+              <span>— DJ Pavan Patel, Business Owner</span>
+              <span>Jacksonville, Florida</span>
+            </div>
+            
+          </div>
+          <div class="testimonial-controls">
+            <button class="testimonial-dot active" data-index="0" aria-label="Testimonial 1"></button>
+            <button class="testimonial-dot" data-index="1" aria-label="Testimonial 2"></button>
+            <button class="testimonial-dot" data-index="2" aria-label="Testimonial 3"></button>
+          </div>
+        </div>
+
         <div class="card small animate-item" style="margin-top:12px">
           <h4>Skills</h4>
           <div class="skills">
@@ -785,6 +821,42 @@ Best regards,`;
         alert('Opening your email client... If it doesn\'t work, please email me at: cuetopatrick1999@gmail.com');
       }, 100);
     }
+
+    // Testimonial slider
+    function setTestimonial(index) {
+      const slides = document.querySelectorAll('.testimonial-slide');
+      const dots = document.querySelectorAll('.testimonial-dot');
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle('active', slideIndex === index);
+      });
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle('active', dotIndex === index);
+      });
+    }
+
+    function initializeTestimonials() {
+      const dots = document.querySelectorAll('.testimonial-dot');
+      let currentIndex = 0;
+      let testimonialInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % dots.length;
+        setTestimonial(currentIndex);
+      }, 7000);
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          const index = Number(dot.dataset.index);
+          currentIndex = index;
+          setTestimonial(index);
+          clearInterval(testimonialInterval);
+          testimonialInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % dots.length;
+            setTestimonial(currentIndex);
+          }, 7000);
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', initializeTestimonials);
 
     // Modal functionality for graphic design works
     const modal = document.getElementById('imageModal');
